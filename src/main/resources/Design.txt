@@ -1,0 +1,44 @@
+ShoutReview
+Requirements:
+    a.	Search a movie by title
+    b.	Rate and add review for a movie
+    c.	Search a top movie by genre
+Entity:
+    Movie:{
+        Must to have
+        Id,
+        title,
+        genre,
+        rating,
+        <reviews>
+        Good to have
+        Release date
+        Length
+        Nice to have
+        Cast
+        }
+    Review: {
+        Must to have
+        Id,
+        movieTitle,
+        rating,
+        review
+        Good to have
+        Userid,
+        createdAt,
+        }
+
+Entity relation: One movie can contain many reviews
+
+
+APIs:
+    Admin:
+        addMovie ->POST
+    ..movie/
+    SearchByTitle -> GET
+        ../movie/:title
+    AddReview -> POST
+         ../review/
+    SearchByGenre -> GET
+         ../genre/:genre
+
