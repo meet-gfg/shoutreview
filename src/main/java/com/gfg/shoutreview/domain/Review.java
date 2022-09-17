@@ -31,7 +31,7 @@ public class Review {
     private double rating;
 
     @ManyToOne
-    @JoinColumn(name="cart_id", nullable=false)
+    @JoinColumn(name="movie_id", nullable=false)
     @JsonIgnore
     private Movie movie; // it will add foregion key in mysql table with <TABLE_NAME>_<ID_NAME> --> // movie_movie_id
 
