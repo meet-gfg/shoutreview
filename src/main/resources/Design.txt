@@ -42,3 +42,7 @@ APIs:
     SearchByGenre -> GET
          ../genre/:genre
 
+
+
+APIs:
+#Postman collection added in the root folder, import to use all apis.

@@ -8,7 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class MovieService {
@@ -23,7 +25,11 @@ public class MovieService {
     public List<Movie> findMoviesByGenre(String genre){
         if(Arrays.stream(Genre.values()).noneMatch(g ->g.toString().equals(genre)))
                 return new ArrayList<>();
-        return movieRepository.findByGenre(Genre.valueOf(genre));
+        List<Movie> movieList= movieRepository.findByGenre(Genre.valueOf(genre));
+        movieList=movieList.stream().sorted(Comparator.comparing(Movie::getRating,Comparator.reverseOrder())).collect(Collectors.toList());
+        if(movieList.size()>5)
+                return movieList.subList(0,4);
+        return movieList;
     }
 
 

@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "325d704d-ff34-494a-af49-d37997c8d18c",
+		"name": "ShoutReview",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add movie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"title\":\"MIB\",\r\n    \"genre\":\"COMEDY\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/admin/movie/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"movie",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddReview",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"movieReview\":\"ok\",\r\n    \"rating\":3,\r\n    \"movieId\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/review/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"review",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SearchByGenre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/movie/genre?genre=COMEDY",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movie",
+						"genre"
+					],
+					"query": [
+						{
+							"key": "genre",
+							"value": "COMEDY"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
