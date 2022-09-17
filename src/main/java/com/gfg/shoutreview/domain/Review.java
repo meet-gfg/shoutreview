@@ -1,7 +1,10 @@
 package com.gfg.shoutreview.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
@@ -17,16 +20,19 @@ import java.util.Date;
 @Builder
 @ToString
 public class Review {
+
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy =GenerationType.AUTO)
     private Long id;
 
     private String movieReview;
 
     private double rating;
 
-    @ManyToOne(fetch=FetchType.EAGER)
-    @JoinColumn
+    @ManyToOne
+    @JoinColumn(name="cart_id", nullable=false)
+    @JsonIgnore
     private Movie movie; // it will add foregion key in mysql table with <TABLE_NAME>_<ID_NAME> --> // movie_movie_id
 
     @CreationTimestamp

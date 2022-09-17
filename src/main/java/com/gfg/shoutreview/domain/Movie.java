@@ -2,9 +2,11 @@ package com.gfg.shoutreview.domain;
 
 import com.gfg.shoutreview.service.response.MovieResponse;
 import lombok.*;
+import org.hibernate.annotations.Fetch;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name="movie_table")
@@ -26,6 +28,9 @@ public class Movie implements Serializable {
     private Genre genre;
 
     private Double rating;
+
+    @OneToMany(mappedBy="movie")
+    private List<Review> reviews;
 
     public MovieResponse toMovieResponse(){
         return MovieResponse.builder().genre(genre).title(this.title).rating(this.rating).build();
