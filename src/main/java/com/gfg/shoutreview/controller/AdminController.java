@@ -18,8 +18,9 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
-    @PostMapping("/movie/add")
+    @PostMapping("movie/add")
     public ResponseEntity<MovieResponse> addMovie(@RequestBody MovieRequest movieRequest){
         return new ResponseEntity<>(adminService.addMovie(movieRequest.toMovie()).toMovieResponse(), HttpStatus.CREATED);
     }
+
 }

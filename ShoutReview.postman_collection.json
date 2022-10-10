@@ -2,7 +2,8 @@
 	"info": {
 		"_postman_id": "325d704d-ff34-494a-af49-d37997c8d18c",
 		"name": "ShoutReview",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23648831"
 	},
 	"item": [
 		{
@@ -81,6 +82,31 @@
 						{
 							"key": "genre",
 							"value": "COMEDY"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchByTitle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/movie/title?title=MIB1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movie",
+						"title"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "MIB1"
 						}
 					]
 				}

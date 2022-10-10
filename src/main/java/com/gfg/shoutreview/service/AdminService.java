@@ -9,6 +9,7 @@ public class AdminService {
 
     private MovieRepository movieRepository;
 
+    //constructor injection
     public AdminService(MovieRepository movieRepository) {
         this.movieRepository = movieRepository;
     }

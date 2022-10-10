@@ -1,39 +1,46 @@
-ShoutReview
+Project 1
+
+ShoutReview --> A movie review platform.
+
 Requirements:
     a.	Search a movie by title
     b.	Rate and add review for a movie
-    c.	Search a top movie by genre
+    c.	Search a top 5 movie by genre
+
+
 Entity:
     Movie:{
-        Must to have
+        --Must to have
         Id,
         title,
         genre,
         rating,
         <reviews>
-        Good to have
+       -- Good to have
         Release date
         Length
-        Nice to have
+       -- Nice to have
         Cast
         }
     Review: {
-        Must to have
+       -- Must to have
         Id,
         movieTitle,
         rating,
         review
-        Good to have
+      --  Good to have
         Userid,
         createdAt,
         }
 
-Entity relation: One movie can contain many reviews
+Entity relation: One movie can contain many reviews  -> One to many relationship.
 
 
 APIs:
     Admin:
-        addMovie ->POST
+        addMovie ->POST  --> priority
+        updateMovie ->
+        deleteMovie ->
     ..movie/
     SearchByTitle -> GET
         ../movie/:title
